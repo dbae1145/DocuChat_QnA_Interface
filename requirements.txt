@@ -1,0 +1,6 @@
+re
+docx
+langchain
+pypdf
+pptx
+streamlit
