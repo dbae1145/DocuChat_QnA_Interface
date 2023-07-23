@@ -1,6 +1,8 @@
-re
-docx
+python-docx
+python-pptx
 langchain
 pypdf
-pptx
 streamlit
+openai
+tiktoken
+faiss-cpu

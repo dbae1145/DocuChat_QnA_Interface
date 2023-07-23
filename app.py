@@ -118,7 +118,7 @@ def main():
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">',
         unsafe_allow_html=True)
     st.write(css, unsafe_allow_html=True)
-    st.title("🤖 Personalized Bot with Memory 🧠 ")
+    st.title("🐄 IntelliKaroba 🐄")
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
