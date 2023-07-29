@@ -20,9 +20,9 @@
 
 1. **Upload your PDF documents:** Click on the upload button in the chat interface to upload your PDF documents.
 
-2. **Ask questions:** Once your PDF documents have been uploaded, simply type in the chat box to ask questions about the contents of the documents. The application's conversational memory feature allows it to maintain context, making interactions smooth and natural.
+2. **View Page Content:** To view the contents of a particular page, go to Show Page Content.
 
-3. **View Page Content:** To view the contents of a particular page, use the command `show page [page number] from [file name]`.
+3. **Ask questions:** Once your PDF documents have been uploaded, simply type in the chat box to ask questions about the contents of the documents. The application's conversational memory feature allows it to maintain context, making interactions smooth and natural.
 
 ## Installation
 
@@ -30,7 +30,7 @@ To set up the app locally, you need to clone this repository and install the req
 
 1. Clone the repository
 ```
-git clone https://github.com/your-username/inteli_karoba.git
+git clone https://github.com/sbae1145/inteli_karoba.git
 ```
 
 2. Change your directory
