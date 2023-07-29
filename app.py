@@ -1,8 +1,8 @@
 import re
 from io import BytesIO
 from typing import List
-
-from docx import Document as DocxDocument
+import io
+from docx import Document
 from langchain import LLMChain
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
@@ -30,21 +30,6 @@ def parse_file(file: BytesIO, filetype: str) -> List[str]:
             text = re.sub(r"\n\s*\n", "\n\n", text)
             output.append(text)
         return output
-    elif filetype == 'docx':
-        docx = DocxDocument(file)
-        output = [para.text for para in docx.paragraphs]
-        return output
-    elif filetype == 'pptx':
-        pptx = Presentation(file)
-        output = []
-        for slide in pptx.slides:
-            for shape in slide.shapes:
-                if shape.has_text_frame:
-                    output.append(shape.text)
-        return output
-    elif filetype == 'txt':
-        text = file.read().decode("utf-8")
-        return text.split("\n")
 
 # Define a function to convert text content to a list of documents
 def text_to_docs(text: str, filename: str) -> List[Document]:
@@ -67,7 +52,7 @@ def text_to_docs(text: str, filename: str) -> List[Document]:
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=2000,
             separators=["\n\n", "\n", ".", "!", "?", ",", " ", ""],
-            chunk_overlap=0,
+            chunk_overlap=100,
         )
         chunks = text_splitter.split_text(doc.page_content)
         for i, chunk in enumerate(chunks):
@@ -114,9 +99,11 @@ def reset_conversation():
     st.session_state.chat_history = []
 
 def main():
+    st.set_page_config(
+        page_title="🐄 IntelliKaroba 🐄",  # Browser tab title
+    )
     st.markdown(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">',
-        unsafe_allow_html=True)
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">',unsafe_allow_html=True)
     st.write(css, unsafe_allow_html=True)
     st.title("🐄 IntelliKaroba 🐄")
 
@@ -128,11 +115,17 @@ def main():
 
     with st.sidebar:
         st.markdown("**Introduction**")
-        # uploaded_file = st.file_uploader("**Upload Your PDF File**", type=["pdf"], accept_multiple_files=True)
-        uploaded_file = st.file_uploader("**Upload Your File**", type=["pdf", "docx", "pptx", "txt"],accept_multiple_files=True)
+        st.markdown("""
+        Welcome to IntelliKaroba!
+        Got documents? Don't get stampeded! 
+        Bring them over to IntelliKaroba, your one-of-a-kind breed of chat interface. 
+        We chew through content and ruminate on information until we provide the answers you seek.
+        Inspired by Karoba, our beloved muse cow, we're ready to yield rich, creamy insights. 
+        So, moo-ve over traditional chat interfaces! IntelliKaroba is here to steer you to the greener pastures of knowledge. 
+        Let’s embark on this trail of discovery together!  
+        """)
+        uploaded_file = st.file_uploader("**Upload Your File**", type=["pdf"],accept_multiple_files=True)
         api = st.text_input("**Enter OpenAI API Key**", type="password", placeholder="sk-")
-
-        system_prompt = st.text_area("**Enter Your Own System Prompt**")
 
         if 'pages' not in st.session_state:
             st.session_state.pages = []
@@ -140,10 +133,6 @@ def main():
         if st.button("Process", key="process_document"):
             with st.spinner("Processing"):
                 doc_dict = {}
-                # for file in uploaded_file:
-                #     doc = parse_pdf(file)
-                #     pages = text_to_docs(doc, file.name)
-                #     doc_dict[file.name] = pages
                 for file in uploaded_file:
                     filetype = file.name.split('.')[-1]
                     doc = parse_file(file, filetype)
