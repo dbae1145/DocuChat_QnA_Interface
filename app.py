@@ -1,8 +1,7 @@
 import re
 from io import BytesIO
 from typing import List
-import io
-from docx import Document
+
 from langchain import LLMChain
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
@@ -14,7 +13,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
 from pypdf import PdfReader
-from pptx import Presentation
+
 import streamlit as st
 
 from htmlTemplates import css, bot_template, user_template
