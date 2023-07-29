@@ -6,15 +6,15 @@ Inteli_karoba is an interactive Q&A chat interface designed to interact with PDF
 
 1. **PDF Upload:** Upload your PDF files directly to the chat interface for interaction. 
 
-    ![Uploading PDFs for embedding](./assets/embedding.jpg)
+    ![Uploading PDFs for embedding](https://github.com/dbae1145/images/blob/main/embedding.JPG?raw=true)
     
 2. **Show Page Content:** Display the contents of a specific page from a specific file.
 
-    ![Showing page content](./assets/show_page.jpg)
+    ![Showing page content](https://github.com/dbae1145/images/blob/main/show_page.JPG?raw=true)
 
 3. **Conversational Q&A:** Ask questions and have a conversation about the contents of your uploaded documents.
 
-    ![Conversation example](./assets/conversation_example.jpg)
+    ![Conversation example](https://github.com/dbae1145/images/blob/main/conversation_example.JPG?raw=true)
 
 ## How to Use
 
