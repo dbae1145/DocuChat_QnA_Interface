@@ -1,10 +1,10 @@
 # inteli_karoba
 
-Inteli_karoba is an interactive Q&A chat interface designed to interact with PDF documents. It allows users to upload their documents and engage in a conversation about the contents of the documents leveraging conversational memory. The application is a combination of features from two different applications [ask-multiple-pdfs](https://github.com/alejandro-ao/ask-multiple-pdfs) and [Chatbot with ChatGPT API and Conversational Memory](https://medium.com/@avra42/how-to-build-a-chatbot-with-chatgpt-api-and-a-conversational-memory-in-python-8d856cda4542).
+**Inteli_karoba** is an interactive Q&A chat interface designed to interact with PDF documents. It allows users to upload their documents and engage in a conversation about the contents of the documents leveraging conversational memory. The application is a combination of features from two different applications [ask-multiple-pdfs](https://github.com/alejandro-ao/ask-multiple-pdfs) and [Chatbot with ChatGPT API and Conversational Memory](https://medium.com/@avra42/how-to-build-a-chatbot-with-chatgpt-api-and-a-conversational-memory-in-python-8d856cda4542).
 
 ## Key Features
 
-1. **PDF Upload:** Upload your PDF files directly to the chat interface for interaction. 
+1. **PDF Upload:** Upload your PDF files directly to the chat interface for interaction. Input your OpenAI API key.
 
     ![Uploading PDFs for embedding](https://github.com/dbae1145/images/blob/main/embedding.JPG?raw=true)
     
