@@ -56,11 +56,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributing
 
-We welcome contributions to inteli_karoba! Please see our [Contributing guide](CONTRIBUTING.md) for more details.
-
+We welcome contributions to inteli_karoba!
 ## Acknowledgments
 
 * [Alejandro AO](https://github.com/alejandro-ao) for the [ask-multiple-pdfs](https://github.com/alejandro-ao/ask-multiple-pdfs) application.
 * Avra for the [Chatbot with ChatGPT API and Conversational Memory](https://medium.com/@avra42/how-to-build-a-chatbot-with-chatgpt-api-and-a-conversational-memory-in-python-8d856cda4542) tutorial.
 
-For any issues, questions, or suggestions, please use the [Issues](https://github.com/your-username/inteli_karoba/issues) page on the Github repository.
+For any issues, questions, or suggestions, please use the [Issues](https://github.com/dbae1145/inteli_karoba/issues) page on the Github repository.
